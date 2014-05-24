@@ -18,7 +18,7 @@
    mysql_select_db("bsi",$conn) 
    or die("Unable to connect to database");
    echo 'Database selected';
-   mysql_close($conn);
+   #mysql_close($conn);
 ?>
 
 
