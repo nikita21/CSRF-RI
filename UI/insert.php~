@@ -23,5 +23,5 @@ if (!mysql_query($query,$conn))
 }
 echo "1 record added";
 //mysql_query($query);
-mysql_close();
+//mysql_close();
 ?>
