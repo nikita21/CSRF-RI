@@ -17,7 +17,7 @@ function SignIn()
 session_start();   //starting the session for user profile page
 if(!empty($_POST['user']))   //checking the 'user' name which is from Sign-In.html, is it empty or have some text
 {
-	$query = mysql_query("SELECT *  FROM student_details where student_id = '$_POST[username]' AND password = '$_POST[password]'") or die(mysql_error());
+	$query = mysql_query("SELECT *  FROM student_details where student_id = '$_POST['Username']' AND password = '$_POST['Password']'") or die(mysql_error());
 	$row = mysql_fetch_array($query) or die(mysql_error());
 	if(!empty($row['student_id']) AND !empty($row['password']))
 	{
