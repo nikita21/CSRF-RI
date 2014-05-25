@@ -7,8 +7,8 @@
  
 <?php
  
-     $uname = $_POST['username'];
-     $pass = $_POST['password'];
+     $uname = $_POST['Username'];
+     $pass = $_POST['Password'];
  
      $sql = "SELECT count(*) FROM student_details WHERE(
      student_id='".$uname."' and  password='".$pass."')";
