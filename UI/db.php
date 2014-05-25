@@ -6,7 +6,7 @@
 <?php
    $dbhost = 'localhost:443';
    $dbuser = 'root';
-   $dbpass = 'vaio';
+   $dbpass = 'ubuntu';
    $conn = mysql_connect($dbhost, $dbuser, $dbpass);
    if(! $conn )
    {

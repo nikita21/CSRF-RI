@@ -6,7 +6,7 @@
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'bsi');
 define('DB_USER','root');
-define('DB_PASSWORD','vaio');
+define('DB_PASSWORD','ubuntu');
 
 /*
 $ID = $_POST['user'];
