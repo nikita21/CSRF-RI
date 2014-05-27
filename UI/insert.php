@@ -14,8 +14,6 @@ $field4=$_POST['Password'];
 
 //@mysql_select_db($database) or die( "Unable to select database");
 $query = "INSERT INTO student_details VALUES('$field1','$field2','$field3','$field4')";
-#$query = "INSERT INTO student_details VALUES('" . $_POST["Username"] . "','" . $_POST["Name"] . "','" . $_POST["Email"] . "','" . $_POST["Password"] . "')";
-#$query = "INSERT INTO student_details VALUES(509,'asd','gh@pix.com','qwer')";
 
 if (!mysql_query($query,$conn))
 {

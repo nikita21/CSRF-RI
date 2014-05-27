@@ -5,7 +5,7 @@
 <?php
 #$dbhost = 'localhost:443';
 #$username="root";
-#$password="vaio";
+#$password="ubuntu";
 #$database="bsi";
 $field1=$_POST['Username'];
 $field2=$_POST['Name'];
@@ -13,8 +13,8 @@ $field3=$_POST['Email'];
 $field4=$_POST['Password'];
 
 //@mysql_select_db($database) or die( "Unable to select database");
-#$query = "INSERT INTO student_details VALUES('".$_POST[Username]."','$field2','$field3','$field4')";
-$query = "INSERT INTO student_details VALUES('" . $_POST["Username"] . "','" . $_POST["Name"] . "','" . $_POST["Email"] . "','" . $_POST["Password"] . "')";
+$query = "INSERT INTO student_details VALUES('$field1','$field2','$field3','$field4')";
+#$query = "INSERT INTO student_details VALUES('" . $_POST["Username"] . "','" . $_POST["Name"] . "','" . $_POST["Email"] . "','" . $_POST["Password"] . "')";
 #$query = "INSERT INTO student_details VALUES(509,'asd','gh@pix.com','qwer')";
 
 if (!mysql_query($query,$conn))
@@ -23,5 +23,5 @@ if (!mysql_query($query,$conn))
 }
 echo "1 record added";
 //mysql_query($query);
-//mysql_close();
+mysql_close();
 ?>
