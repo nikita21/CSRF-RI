@@ -1,0 +1,136 @@
+<html>
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="admin" >
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>login</title>
+       
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+    <link href="sticky-footer.css" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+ </head>
+
+ <body>
+ <div class="container">
+	<div class="row">
+        <div class="span12">
+    		<div class="" id="loginModal">
+              <div class="modal-header">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
+                <h3>Have an Account?</h3>
+              </div>
+              <div class="modal-body">
+                <div class="well">
+                  <ul class="nav nav-tabs" id="myTab">
+                    <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
+                    <li><a href="#create" data-toggle="tab">Create Account</a></li>
+                  </ul>
+					<div id="myTabContent" class="tab-content">
+						<div class="tab-pane active in" id="login">
+						  <form class="form-horizontal" action="connectivity.php" method="POST">
+							<fieldset>
+							  <div id="legend">
+								<legend class="">Login</legend>
+							  </div>    
+							  <div class="control-group">
+								<!-- Username -->
+								<label class="control-label"  for="username">Username</label>
+								<div class="controls">
+								  <input type="text" id="username" name="Username" placeholder="" class="input-xlarge">
+								</div>
+							  </div>
+		 
+							  <div class="control-group">
+								<!-- Password-->
+								<label class="control-label" for="password">Password</label>
+								<div class="controls">
+								  <input type="password" id="password" name="Password" placeholder="" class="input-xlarge">
+								</div>
+							  </div>
+		 
+								<br>
+							  <div class="control-group">
+								<!-- Button -->
+								<div class="controls">
+								  <button class="btn btn-success" id="submit">submit</button>
+								</div>
+							  </div>
+							</fieldset>
+						  </form>                
+						</div>
+                        
+						<div class="tab-pane fade" id="create">
+						  <form class="form-horizontal" action="insert.php" method="post" id="tab">
+							<fieldset>
+								<div id="legend">
+								<legend class="">Create account</legend>
+							  </div>
+							  <div class="control-group">
+								<!-- Username -->
+								<label class="control-label"  for="username">Username</label>
+								<div class="controls">
+								 <input type="text" id="username" name="Username" placeholder="" class="input-xlarge">
+								</div>
+							  </div>
+                                
+                            <div class="control-group">
+								<!-- NAme-->
+								<label class="control-label" for="Email">Name</label>
+								<div class="controls">
+								<input type="text" id="Name" name="Name" placeholder="" class="input-xlarge">
+								</div>
+							  </div>
+		 
+							  <div class="control-group">
+								<!-- Email-->
+								<label class="control-label" for="Email">Email</label>
+								<div class="controls">
+								<input type="text" id="Email" name="Email" placeholder="" class="input-xlarge">
+								</div>
+							  </div>
+		 
+							  <div class="control-group">
+								<!-- Password-->
+								<label class="control-label" for="password">Password</label>
+								<div class="controls">
+								<input type="password" id="password" name="Password" placeholder="" class="input-xlarge">
+								</div>
+							  </div>
+                                
+                                <div class="control-group">
+								<!-- Password-->
+								<label class="control-label" for="password">Retype Password</label>
+								<div class="controls">
+								<input type="password" id="Re_password" name="Re_password" placeholder="" class="input-xlarge">
+								</div>
+							  </div>
+								<br>
+							  <div class="control-group">
+								<!-- Button -->
+								<div class="controls">
+								  <button class="btn btn-success">Create account</button>
+								</div>
+							  </div>
+							</fieldset>
+						  </form>
+						</div>
+					</div>
+              </div>
+            </div>
+        </div>
+	</div>
+</div>
+</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+  </body>
+</html>

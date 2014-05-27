@@ -68,7 +68,7 @@
 			</tbody>
         </table>
         </div>
-		<a href="logout.php"><input type="button" value="Logout" class="btn btn-danger center-block" /></a>
+		<a href="logout.php"><input type="button" value="logout" class="btn btn-danger center-block" /></a>
         </div>
 	</div>
 </div>

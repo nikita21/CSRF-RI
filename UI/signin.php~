@@ -27,7 +27,7 @@
         $_SESSION['userName'] = $uname;
 	#open("homepage.html");
         echo "<br />Welcome ".$_SESSION['userName']."!";
-	echo "<br /><a href='homepage.html'>Go to homepage</a>";
+	echo "<br /><a href='homepage.html'>SignUp</a>";
         #echo "<br /><a href='signupform.php'>SignUp</a>";
         #echo "<br /><a href='signinform.php'>SignIn</a>";
         #echo "<br /><a href='logout.php'>LogOut</a>";
