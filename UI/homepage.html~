@@ -38,31 +38,31 @@
 				<tr>
 				<td>Course1</td>
 				<td></td>
-				<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course1" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
 				</tr>
 				
 				<tr>
 				<td>Course2</td>
 				<td></td>
-				<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course2" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
 				</tr>
 
 				<tr>
 				<td>Course3</td>
 				<td>feedback not given</td>
-				<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course3" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
 				</tr>
 				
 				<tr>
 			    <td>Course4</td>
 				<td>feedback given</td>
-				<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course4" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
 				</tr>
 				
 				<tr>
 				<td>Course5</td>
 				<td></td>
-				<td><p><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course5" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
 				</tr>
        
 			</tbody>
@@ -85,28 +85,33 @@
         <div class="modal-body">
 			<p>Rate accordingly: 1 for below expectations,2 for not bad, 3 for neutral, 4 for good and 5 for excellent</p>
 			<div class="form-group">
+			<div  class="col-xs-9"><p>Course name :</p></div>
+			<div class="col-xs-3"><input type="text" name="courseId" id="courseId" value=""/></div>
+			</div>
+			</br>&nbsp
+			<div class="form-group">
 			<div  class="col-xs-9"><p>Course content met your needs :</p></div>
-			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate"></div>
+			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate" id="q1"></div>
 			</div>
 			</br>&nbsp
 			<div class="form-group">
 			<div  class="col-xs-9"><p>Instructor has the knowledge of the subject matter :</p></div>
-			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate"></div>
+			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate" id="q2"></div>
 			</div>
 			</br>&nbsp
 			<div class="form-group">
 			<div  class="col-xs-9"><p>Instructor responded well to student questions :</p></div>
-			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate"></div>
+			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate" id="q3"></div>
 			</div>
 			</br>&nbsp
 			<div class="form-group">
 			<div  class="col-xs-9"><p>Instructor communicated material effectively :</p></div>
-			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate"></div>
+			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate" id="q4"></div>
 			</div>
 			</br>&nbsp
 			<div class="form-group">
 			<div  class="col-xs-9"><p>Course offering matched description in course guide :</p></div>
-			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate"></div>
+			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate" id="q5"></div>
 			</div>
 		</div>
         <div class="modal-footer ">
@@ -127,5 +132,6 @@
 	
 	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 	<script type="text/javascript" src="bootstrap/js/homepage.js"></script>
+	<script type="text/javascript" src="bootstrap/js/feedback.js"></script>
   </body>
 </html>
