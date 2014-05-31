@@ -115,7 +115,22 @@
 			</div>
 		</div>
         <div class="modal-footer ">
-        <button type="button" class="btn btn-success btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Submit</button>
+        <input type="submit" class="btn btn-success btn-lg" name="flag" style="width: 100%;"><!--span class="glyphicon glyphicon-ok-sign"></span-->
+        <?php 
+ 		include_once("db.php"); 
+  		session_start();
+ 		?>
+        <?php
+        $field1-name=$_POST['username'];
+		$field2-name=$_POST['courseId'];
+		$field3-name=$_POST['flag']
+        	if(isset($_POST['flag'])){
+        	echo "flag will be set to 1 if the form has been submitted";
+        }
+        $query = "INSERT INTO courses VALUES('$field1-name','$field2-name','$field3-name')";
+		mysql_query($query);
+		mysql_close();
+		?>
 		</div>
 		</form>
         </div>
