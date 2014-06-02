@@ -84,6 +84,17 @@
 		</div>
 		<div class="modal-body">
 			<p>Rate accordingly: 1 for below expectations,2 for not bad, 3 for neutral, 4 for good and 5 for excellent</p>
+            <?php
+session_start(); 
+
+require 'include/signin.php';
+$id = $_SESSION['userName'];
+$query="SELECT student_id FROM student_details WHERE(
+     student_id='".$id."')";;
+$result=mysql_query($query);
+$row = mysql_fetch_array($result);
+?>
+            <input name="username" value="<?php echo $row['student_id'].?>">
 			<div class="form-group">
 			<div  class="col-xs-9"><p>Course name :</p></div>
 			<div class="col-xs-3"><input class="form-control" name="courseId" id="courseId" value=""/></div>
