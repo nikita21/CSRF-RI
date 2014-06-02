@@ -37,32 +37,32 @@
     
 				<tr>
 				<td>Course1</td>
-				<td></td>
-				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course1" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+				<td>feedback not given</td>
+				<td><input type="button" value="Edit" class="btn btn-primary btn-xs open-AddCourseDialog" onClick="location.href='feedback.html'" data-id="Course1" href="#addCourseDialog"></td>
 				</tr>
 				
 				<tr>
 				<td>Course2</td>
-				<td></td>
-				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course2" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+				<td>feedback not given</td>
+				<td><input type="button" value="Edit" class="btn btn-primary btn-xs open-AddCourseDialog" onClick="location.href='feedback.html'" data-id="Course2" href="#addCourseDialog"></td>
 				</tr>
 
 				<tr>
 				<td>Course3</td>
 				<td>feedback not given</td>
-				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course3" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+				<td><input type="button" value="Edit" class="btn btn-primary btn-xs open-AddCourseDialog" onClick="location.href='feedback.html'" data-id="Course3" href="#addCourseDialog"></td>
 				</tr>
 				
 				<tr>
 			    <td>Course4</td>
 				<td>feedback given</td>
-				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course4" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+				<td><input type="button" value="Edit" class="btn btn-primary btn-xs open-AddCourseDialog" onClick="location.href='feedback.html'" data-id="Course4" href="#addCourseDialog"></td>
 				</tr>
 				
 				<tr>
 				<td>Course5</td>
-				<td></td>
-				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course5" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+				<td>feedback given</td>
+				<td><input type="button" value="Edit" class="btn btn-primary btn-xs open-AddCourseDialog" onClick="location.href='feedback.html'" data-id="Course5" href="#addCourseDialog"></td>
 				</tr>
        
 			</tbody>
@@ -72,71 +72,11 @@
         </div>
 	</div>
 </div>
+<?php
+session_start();
+$_SESSION('data-id')=$courseId;  
+?>
 
-<!--Edit button-->
-<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-    <div class="modal-dialog">
-    	<form class="form-horizontal" role="form" action="output.php" method="post">
-    <div class="modal-content">
-        <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title custom_align" id="Heading">Give feedback</h4>
-		</div>
-		<div class="modal-body">
-			<p>Rate accordingly: 1 for below expectations,2 for not bad, 3 for neutral, 4 for good and 5 for excellent</p>
-            <!--?php
-session_start(); 
-
-require 'include/signin.php';
-$id = $_SESSION['userName'];
-$query="SELECT student_id FROM student_details WHERE(
-     student_id='".$id."')";;
-$result=mysql_query($query);
-$row = mysql_fetch_array($result);
-?-->
-            <input name="username" value="<?php echo $row['student_id'].?>">
-			<div class="form-group">
-			<div  class="col-xs-9"><p>Course name :</p></div>
-			<div class="col-xs-3"><input class="form-control" name="courseId" id="courseId" value=""/></div>
-			</div>
-			</br>&nbsp
-			<div class="form-group">
-			<div  class="col-xs-9"><p>Course content met your needs :</p></div>
-			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate" name="q1" id="q1"></div>
-			</div>
-			</br>&nbsp
-			<div class="form-group">
-			<div  class="col-xs-9"><p>Instructor has the knowledge of the subject matter :</p></div>
-			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate" name="q2" id="q2"></div>
-			</div>
-			</br>&nbsp
-			<div class="form-group">
-			<div  class="col-xs-9"><p>Instructor responded well to student questions :</p></div>
-			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate" name="q3" id="q3"></div>
-			</div>
-			</br>&nbsp
-			<div class="form-group">
-			<div  class="col-xs-9"><p>Instructor communicated material effectively :</p></div>
-			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate" name="q4" id="q4"></div>
-			</div>
-			</br>&nbsp
-			<div class="form-group">
-			<div  class="col-xs-9"><p>Course offering matched description in course guide :</p></div>
-			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate" name="q5" id="q5"></div>
-			</div>
-		</div>
-        <div class="modal-footer ">
-        <input type="submit" class="btn btn-success btn-lg" name="flag" id="flag"style="width: 100%;"><!--span class="glyphicon glyphicon-ok-sign"></span-->
-
-		</div>
-		
-        </div>
-    <!-- /.modal-content --> </form>
-  </div>
-      <!-- /.modal-dialog --> 
-    </div>
- 
- 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
