@@ -1,3 +1,7 @@
+<?php 
+ include_once("signin.php"); 
+ session_start(); 
+?>
 <html>
  <head>
     <meta charset="utf-8">
@@ -31,13 +35,13 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="feedback.html">Feedback</a></li>
-            <li><a href="profile.html">Profile</a></li>
+            <li><a href="feedback.php">Feedback</a></li>
+            <li><a href="profile.php">Profile</a></li>
             <li><a href="#">Help</a></li>
             <li><div class="btn-group pull-right">
-					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" style="padding-top:13px"><i class="icon-user"></i> Welcome, user<span class="caret"></span></a>
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" style="padding-top:13px"><i class="icon-user"></i> Welcome, <?php echo $_SESSION['userName']; ?><span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="setting.html"><i class="icon-wrench"></i> Settings</a></li>
+						<li><a href="setting.php"><i class="icon-wrench"></i> Settings</a></li>
 						<li class="divider"></li>
 						<li><a href="logout.php"><i class="icon-share"></i> Logout</a></li>
 					</ul>
@@ -159,9 +163,7 @@
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	
+    <!-- Placed at the end of the document so the pages load faster -->	
 	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>

@@ -12,12 +12,12 @@
    {
      die('Could not connect: ' . mysql_error());
    }
-   echo 'Connected successfully<br>';
+   //echo 'Connected successfully<br>';
 
    //select a database to work with
    mysql_select_db("bsi",$conn) 
    or die("Unable to connect to database");
-   echo 'Database selected';
+   //echo 'Database selected';
    #mysql_close($conn);
 ?>
 

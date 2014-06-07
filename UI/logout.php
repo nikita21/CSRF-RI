@@ -8,6 +8,7 @@
  
 	if(!$_SESSION['userName']){
    		echo "Successfully logged out!<br />";
+   		
 		echo "<br /><a href='login.html'>Login</a>";
 	}
 	else
