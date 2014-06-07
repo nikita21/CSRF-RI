@@ -68,39 +68,35 @@
 				<td>Course1</td>
  				<td></td>
  				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course1" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
- 				<!--td>feedback not given</td>
- 				<td><input type="button" value="Edit" class="btn btn-primary btn-xs open-AddCourseDialog" onClick="location.href='feedback.html'" data-id="Course1" href="#addCourseDialog"></td-->
+ 				
   				</tr>
   				
   				<tr>
   				<td>Course2</td>
  				<td></td>
  				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course2" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
- 				<!--td>feedback not given</td>
- 				<td><input type="button" value="Edit" class="btn btn-primary btn-xs open-AddCourseDialog" onClick="location.href='feedback.html'" data-id="Course2" href="#addCourseDialog"></td-->
+ 				
   				</tr>
   
   				<tr>
   				<td>Course3</td>
   				<td>feedback not given</td>
  				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course3" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
- 				<!--td><input type="button" value="Edit" class="btn btn-primary btn-xs open-AddCourseDialog" onClick="location.href='feedback.html'" data-id="Course3" href="#addCourseDialog"></td-->
+ 				
   				</tr>
   				
   				<tr>
   			    <td>Course4</td>
   				<td>feedback given</td>
  				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course4" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
- 				<!--td><input type="button" value="Edit" class="btn btn-primary btn-xs open-AddCourseDialog" onClick="location.href='feedback.html'" data-id="Course4" href="#addCourseDialog"></td-->
+ 				
   				</tr>
   				
   				<tr>
   				<td>Course5</td>
  				<td></td>
  				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course5" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
- 				<!--td>feedback given</td>
- 				<!--td><input type="button" value="Edit" class="btn btn-primary btn-xs open-AddCourseDialog" onClick="location.href='feedback.html'" data-id="Course5" href="#addCourseDialog"></td-->
-  				</tr>
+ 				</tr>
          
   			</tbody>
  
@@ -119,17 +115,7 @@
  		</div>
  		<div class="modal-body">
  			<p>Rate accordingly: 1 for below expectations,2 for not bad, 3 for neutral, 4 for good and 5 for excellent</p>
-             <!--?php
- -session_start(); 
- -
- -require 'include/signin.php';
- -$id = $_SESSION['userName'];
- -$query="SELECT student_id FROM student_details WHERE(
- -     student_id='".$id."')";;
- -$result=mysql_query($query);
- -$row = mysql_fetch_array($result);
- -?-->
-             <input name="username" value="<?php echo $row['student_id'].?>">
+            <input name="username" value="<?php echo $row['student_id'].?>">
  			<div class="form-group">
  			<div  class="col-xs-9"><p>Course name :</p></div>
  			<div class="col-xs-3"><input class="form-control" name="courseId" id="courseId" readonly="readonly" value=""/></div>
@@ -170,24 +156,16 @@
    </div>
        <!-- /.modal-dialog --> 
      </div>
-<?php
-session_start();
-$_SESSION('data-id')=$courseId;  
-?>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	
-	<!--script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="bootstrap/js/homepage.js"></script-->
 	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/bootbox.js"></script>
     <script type="text/javascript" src="bootstrap/js/feedback.js"></script>
-<!--script src="http://templateplanet.info/tooltip.js"></script>
-<script src="http://templateplanet.info/modal.js"></script-->
   </body>
 </html>
