@@ -65,7 +65,7 @@
 		<h4>Courses available</h4>
 		</div>
         <div class="table-responsive modal-body">
-        
+        <form method="post" action="feedback_form.php">
 		<table id="mytable" class="table table-bordred table-striped">
             <thead>
 		    <th>Course Name</th>
@@ -77,39 +77,40 @@
 				<tr>
 				<td>Course1</td>
  				<td></td>
- 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course1" value="enter"><span class="glyphicon glyphicon-pencil"></span></p></td>
+ 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course1"><span class="glyphicon glyphicon-pencil"></span></p></td>
  				
   				</tr>
   				
   				<tr>
   				<td>Course2</td>
  				<td></td>
- 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course2" value="enter"><span class="glyphicon glyphicon-pencil"></span></p></td>
+ 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course2"><span class="glyphicon glyphicon-pencil"></span></p></td>
  				
   				</tr>
   
   				<tr>
   				<td>Course3</td>
   				<td>feedback not given</td>
- 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course3" value="enter"><span class="glyphicon glyphicon-pencil"></span></p></td>
+ 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course3"><span class="glyphicon glyphicon-pencil"></span></p></td>
  				
   				</tr>
   				
   				<tr>
   			    <td>Course4</td>
   				<td>feedback given</td>
- 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course4" value="enter"><span class="glyphicon glyphicon-pencil"></span></p></td>
+ 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course4"><span class="glyphicon glyphicon-pencil"></span></p></td>
  				
   				</tr>
   				
   				<tr>
   				<td>Course5</td>
  				<td></td>
- 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course2" value="enter"><span class="glyphicon glyphicon-pencil"></span></p></td>
+ 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course5"><span class="glyphicon glyphicon-pencil"></span></p></td>
  				</tr>
          
   			</tbody>
         </table>
+      </form>
           </div>
   	</div>
   </div>

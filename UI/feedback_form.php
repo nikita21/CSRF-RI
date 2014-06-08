@@ -61,7 +61,7 @@
             <input name="username" type="hidden" value="<?php echo $_SESSION['userName']; ?>" readonly="readonly">
  			<div class="form-group">
  			<div  class="col-xs-9"><p>Course name :</p></div>
- 			<div class="col-xs-3"><input class="form-control" name="courseId" id="courseId" readonly="readonly" value=""/></div>
+ 			<div class="col-xs-3"><input class="form-control" name="courseId" id="courseId" readonly="readonly" value="<?php echo $_POST["Course"]; ?>" /></div>
  			</div>
  			
  			<div class="form-group">

@@ -4,9 +4,9 @@
     if(isset($_POST['submit']))
     {
         $mail = $_POST['mail']; 
-        $password = ($_POST['password']);
-        $newpassword = ($_POST['newpassword']);
-        $confirmnewpassword = ($_POST['confirmnewpassword']);
+        $password = md5($_POST['password']);
+        $newpassword = md5($_POST['newpassword']);
+        $confirmnewpassword = md5($_POST['confirmnewpassword']);
 
         $result = mysql_query("SELECT password FROM student_details WHERE student_id='$mail'");
 
