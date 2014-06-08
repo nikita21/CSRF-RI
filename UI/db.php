@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Connecting MySQL Server</title>
+	<title>Feedback</title>
 </head>
 <body>
 <?php
