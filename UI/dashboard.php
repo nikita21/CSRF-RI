@@ -32,7 +32,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"></a>
+          <a class="navbar-brand" href="dashboard.php">Dashboard</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -52,6 +52,15 @@
         </div>
       </div>
     </div>
+      <br>&nbsp;<br></br></br>
+      <div class="container">
+      <div class="jumbotron">
+    <div class="center">
+        
+          <p>This feedback website is simply gathering insights from students to improve the Quality of knowledge. This ability to capture real-time feedback about education provided at key interaction points provides organization critical insights that highlight key opportunities for improvement. </p>
+          </div>    
+      </div>
+      </div>
 
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
