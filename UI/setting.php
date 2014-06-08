@@ -54,8 +54,9 @@
     
 <br><br>&nbsp;</br></br>
 <div class="jumbotron">
-	<div class="container">
+	<div class="container jumbotron">
 	  <div class="row">
+          <div class="col-md-1"></div>
 	    <div class="col-md-10">
 	      <div align="center">
 		<form action="/change_pass/" method="POST">
@@ -86,7 +87,7 @@
 	      </div>
                         
                         <div class="controls">
-                            <button type="submit" class="btn btn-success btn-block btn-lg">Submit</button>
+                            <button type="submit" class="btn btn-success center-block btn-block btn-lg">Submit</button>
                         </div>
 		</form>
 	      </div>
