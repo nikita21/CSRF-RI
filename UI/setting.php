@@ -1,7 +1,42 @@
-<?php 
- include_once("signin.php"); 
- session_start(); 
-?>
+ <?php
+ include("db.php");
+ session_start();
+    if(isset($_POST['submit']))
+    {
+        $mail = $_POST['mail']; 
+        $password = ($_POST['password']);
+        $newpassword = ($_POST['newpassword']);
+        $confirmnewpassword = ($_POST['confirmnewpassword']);
+
+        $result = mysql_query("SELECT password FROM student_details WHERE student_id='$mail'");
+
+            if(!$result)
+            {
+                echo "The email entered does not exist!";
+            }
+            else
+            if($password != mysql_result($result, 0))
+            {
+                echo "Entered an incorrect password";
+            }
+
+            if($newpassword == $confirmnewpassword)
+            {
+                $sql = mysql_query("UPDATE student_details SET password = '$newpassword' WHERE student_id = '$mail'");      
+            }
+
+            if($sql)
+            {
+                echo "Congratulations, password successfully changed!";
+            }
+            else
+            {
+                echo "New password and confirm password must be the same!";
+            }
+    
+    
+        }     
+    ?>
 <html>
  <head>
     <meta charset="utf-8">
@@ -59,11 +94,18 @@
           <div class="col-md-1"></div>
 	    <div class="col-md-10">
 	      <div align="center">
-		<form action="/change_pass/" method="POST">
+		<form action="" method="POST">
+             <div>
+                        <label for="mail">Username </label>
+              <div class="input-group">
+                  <input type="text" id="mail" class="form-control" name="mail" value="<?php echo $_SESSION['userName']; ?>" readonly="readonly" required autofocus />
+              </div>
+              </div>
+
 		    <div>
-                        <label for="oldpassword">OLD PASSWORD * </label>
+                        <label for="oldpassword">CURRENT PASSWORD * </label>
 			  <div class="input-group">
-			      <input maxlength=100 type="password" id="oldpassword" class="form-control" name="oldpass" placeholder="Valid Password"
+			      <input maxlength=100 type="password" id="password" class="form-control" name="password" value="" placeholder="Enter Current Password"
                                 required autofocus />
 			  </div>
 		      </div>				
@@ -71,7 +113,7 @@
 		    <div>
                         <label for="newpassword">NEW PASSWORD * </label>
                         <div class="input-group">
-                            <input maxlength=100 type="password" id="passwd" class="form-control" name="pass" placeholder="Valid Password"
+                            <input maxlength=100 type="password" id="newpassword" class="form-control" name="newpassword" value="" placeholder="New Password"
                                 required autofocus />
 			</div>
 		    </div>
@@ -80,14 +122,14 @@
 		    <div>
                         <label for="password">CONFIRM PASSWORD * </label>
                         <div class="input-group">
-                            <input maxlength=100 type="password" id="conf_passwd" class="form-control" placeholder="Valid Password"
+                            <input maxlength=100 type="password" id="confirmnewpasswd" class="form-control" name="confirmnewpassword" value="" placeholder="Re-enter Password"
                                 required autofocus />
 			</div>
 		    </div>
 	      </div>
                         
                         <div class="controls">
-                            <button type="submit" class="btn btn-success center-block btn-block btn-lg">Submit</button>
+                            <button type="submit" name="submit" value="submit" class="btn btn-success center-block btn-block btn-lg">Submit</button>
                         </div>
 		</form>
 	      </div>
@@ -96,13 +138,10 @@
   </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	
+    <!-- Placed at the end of the document so the pages load faster -->	
 	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/bootbox.js"></script>
-    <script type="text/javascript" src="bootstrap/js/feedback.js"></script>
   </body>
 </html>
