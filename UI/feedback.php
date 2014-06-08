@@ -2,21 +2,27 @@
  include_once("signin.php"); 
  session_start(); 
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="admin" >
+    <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
     <title>homepage</title>
        
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">    <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
+    <!--link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">    <!-- Custom styles for this template -->
+    <!--link href="jumbotron.css" rel="stylesheet">
     <link href="sticky-footer.css" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
  </head>
 
  <body>
@@ -103,64 +109,13 @@
  				</tr>
          
   			</tbody>
- 
+        </table>
           </div>
   	</div>
   </div>
-  
+  </div>
  <!--Edit button-->
- <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-     <div class="modal-dialog">
-     	<form class="form-horizontal" role="form" action="output.php" method="post">
-     <div class="modal-content">
-         <div class="modal-header">
-         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-         <h4 class="modal-title custom_align" id="Heading">Give feedback</h4>
- 		</div>
- 		<div class="modal-body">
- 			<p>Rate accordingly: 1 for below expectations,2 for not bad, 3 for neutral, 4 for good and 5 for excellent</p>
-            <input name="username" value="<?php echo $row['student_id'].?>">
- 			<div class="form-group">
- 			<div  class="col-xs-9"><p>Course name :</p></div>
- 			<div class="col-xs-3"><input class="form-control" name="courseId" id="courseId" readonly="readonly" value=""/></div>
- 			</div>
- 			</br>&nbsp
- 			<div class="form-group">
- 			<div  class="col-xs-9"><p>Course content met your needs :</p></div>
- 			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate" name="q1" id="q1"></div>
- 			</div>
- 			</br>&nbsp
- 			<div class="form-group">
- 			<div  class="col-xs-9"><p>Instructor has the knowledge of the subject matter :</p></div>
- 			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate" name="q2" id="q2"></div>
- 		</div>
- 			</br>&nbsp
- 			<div class="form-group">
- 			<div  class="col-xs-9"><p>Instructor responded well to student questions :</p></div>
- 			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate" name="q3" id="q3"></div>
- 			</div>
- 			</br>&nbsp
- 			<div class="form-group">
- 			<div  class="col-xs-9"><p>Instructor communicated material effectively :</p></div>
- 			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate" name="q4" id="q4"></div>
- 			</div>
- 			</br>&nbsp
- 			<div class="form-group">
- 			<div  class="col-xs-9"><p>Course offering matched description in course guide :</p></div>
- 			<div class="col-xs-3"><input class="form-control" type="text" placeholder="rate" name="q5" id="q5"></div>
- 			</div>
- 		</div>
-         <div class="modal-footer ">
-         <input type="submit" class="btn btn-success btn-lg" name="flag" id="flag"style="width: 100%;"><!--span class="glyphicon glyphicon-ok-sign"></span-->
  
- 		</div>
- 		
-         </div>
-     <!-- /.modal-content --> </form>
-   </div>
-       <!-- /.modal-dialog --> 
-     </div>
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->	
