@@ -77,35 +77,35 @@
 				<tr>
 				<td>Course1</td>
  				<td></td>
- 				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course1" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+ 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" data-id="Course1" value="enter"><span class="glyphicon glyphicon-pencil"></span></p></td>
  				
   				</tr>
   				
   				<tr>
   				<td>Course2</td>
  				<td></td>
- 				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course2" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+ 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" data-id="Course2" value="enter"><span class="glyphicon glyphicon-pencil"></span></p></td>
  				
   				</tr>
   
   				<tr>
   				<td>Course3</td>
   				<td>feedback not given</td>
- 				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course3" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+ 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" data-id="Course3" value="enter"><span class="glyphicon glyphicon-pencil"></span></p></td>
  				
   				</tr>
   				
   				<tr>
   			    <td>Course4</td>
   				<td>feedback given</td>
- 				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course4" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+ 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" data-id="Course4" value="enter"><span class="glyphicon glyphicon-pencil"></span></p></td>
  				
   				</tr>
   				
   				<tr>
   				<td>Course5</td>
  				<td></td>
- 				<td><p><button class="btn btn-primary btn-xs open-AddCourseDialog" data-title="Edit" data-toggle="modal" data-target="#edit" data-placement="top" rel="tooltip" data-id="Course5" href="#addCourseDialog"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+ 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" data-id="Course2" value="enter"><span class="glyphicon glyphicon-pencil"></span></p></td>
  				</tr>
          
   			</tbody>
