@@ -68,49 +68,49 @@
  			<div  class="col-xs-9"><p>Course content met your needs :</p></div>
  			<div class="col-xs-3"><!--input class="form-control" type="text" placeholder="rate" name="q1" id="q1"-->
                 <!--form name=myform-->
-                <input type="radio" name=q1 value="1">1
-                <input type="radio" name=q1 value="2">2
-                <input type="radio" name=q1 value="3">3
-                <input type="radio" name=q1 value="4">4
-                <input type="radio" name=q1 value="5">5
+                <input type="radio" name="q1" value="1">1
+                <input type="radio" name="q1" value="2">2
+                <input type="radio" name="q1" value="3">3
+                <input type="radio" name="q1" value="4">4
+                <input type="radio" name="q1" value="5">5
                 <!--/form--></div>
  			</div>
  			
  			<div class="form-group">
  			<div  class="col-xs-9"><p>Instructor has the knowledge of the subject matter :</p></div>
  			<div class="col-xs-3">
-                <input type="radio" name=q2 value="1">1
-                <input type="radio" name=q2 value="2">2
-                <input type="radio" name=q2 value="3">3
-                <input type="radio" name=q2 value="4">4
-                <input type="radio" name=q2 value="5">5</div>
+                <input type="radio" name="q2" value="1">1
+                <input type="radio" name="q2" value="2">2
+                <input type="radio" name="q2" value="3">3
+                <input type="radio" name="q2" value="4">4
+                <input type="radio" name="q2" value="5">5</div>
  		</div>
  			
  			<div class="form-group">
  			<div  class="col-xs-9"><p>Instructor responded well to student questions :</p></div>
- 			<div class="col-xs-3"><input type="radio" name=q3 value="1">1
-                <input type="radio" name=q3 value="2">2
-                <input type="radio" name=q3 value="3">3
-                <input type="radio" name=q3 value="4">4
-                <input type="radio" name=q3 value="5">5</div>
+ 			<div class="col-xs-3"><input type="radio" name="q3" value="1">1
+                <input type="radio" name="q3" value="2">2
+                <input type="radio" name="q3" value="3">3
+                <input type="radio" name="q3" value="4">4
+                <input type="radio" name="q3" value="5">5</div>
  			</div>
  			
  			<div class="form-group">
  			<div  class="col-xs-9"><p>Instructor communicated material effectively :</p></div>
- 			<div class="col-xs-3"><input type="radio" name=q4 value="1">1
-                <input type="radio" name=q4 value="2">2
-                <input type="radio" name=q4 value="3">3
-                <input type="radio" name=q4 value="4">4
-                <input type="radio" name=q4 value="5">5</div>
+ 			<div class="col-xs-3"><input type="radio" name="q4" value="1">1
+                <input type="radio" name="q4" value="2">2
+                <input type="radio" name="q4" value="3">3
+                <input type="radio" name="q4" value="4">4
+                <input type="radio" name="q4" value="5">5</div>
  			</div>
  			
  			<div class="form-group">
  			<div  class="col-xs-9"><p>Course offering matched description in course guide :</p></div>
- 			<div class="col-xs-3"><input type="radio" name=q5 value="1">1
-                <input type="radio" name=q5 value="2">2
-                <input type="radio" name=q5 value="3">3
-                <input type="radio" name=q5 value="4">4
-                <input type="radio" name=q5 value="5">5</div>
+ 			<div class="col-xs-3"><input type="radio" name="q5" value="1">1
+                <input type="radio" name="q5" value="2">2
+                <input type="radio" name="q5" value="3">3
+                <input type="radio" name="q5" value="4">4
+                <input type="radio" name="q5" value="5">5</div>
  			</div>
  		 <input type="submit" class="btn btn-success btn-lg" name="flag" id="flag"style="width: 100%;" value="Submit"><!--span class="glyphicon glyphicon-ok-sign"></span-->
  
