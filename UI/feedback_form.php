@@ -51,7 +51,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div><br/><br/><br/><br/>
       <div class="container">
 <form class="form-horizontal" action="output.php" method="post">
      <div class="row center well">
