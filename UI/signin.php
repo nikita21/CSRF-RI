@@ -33,8 +33,9 @@
       }
       else
       {
-        echo "Login Failed";
-        echo "<br /><a href='login.html'>SignUp</a>";
-        echo "<br /><a href='login.html'>SignIn</a>";
+        if(!empty($uname)){
+          echo "Login Failed";
+          echo "<br /><a href='login.html'>SignUp</a>";
+          echo "<br /><a href='login.html'>SignIn</a>";}
       }
 ?>
