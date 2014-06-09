@@ -1,6 +1,13 @@
 <?php 
  include_once("signin.php"); 
  session_start(); 
+ //$strSQL = "SELECT * FROM student_details WHERE student_id = $_SESSION['userName']";
+ //$rs = mysql_query($strSQL);
+ //while($row = mysql_fetch_array($rs))
+ //{
+   // echo $row['name'];
+    //echo $row['email_id'];
+ //}
 ?>
 <html>
  <head>
@@ -64,9 +71,9 @@
         </div>
         
         <div class="span8 col-xs-5">
-            <h3>Name :    <?php echo $_SESSION['userName']; ?></h3>
-            <h6>User Name</h6>
-            <h6>Email: MyEmail@servidor.com</h6>
+            <h3>Name :    <!--?php echo $fullname; ?--></h3>
+            <h6>Student_ID : <?php echo $_SESSION['userName']; ?></h6>
+            <h6>Email: <!--?php echo $mail; ?--></h6>
         </div>
     </div>
     </div>
