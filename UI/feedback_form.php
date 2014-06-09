@@ -18,7 +18,7 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="dashboard.css" rel="stylesheet"> 
   </head>
 
   <body>
@@ -112,7 +112,7 @@
                 <input type="radio" name="q5" value="4">4
                 <input type="radio" name="q5" value="5">5</div>
  			</div>
- 		 <input type="submit" class="btn btn-success btn-lg" name="flag" id="flag"style="width: 100%;" value="Submit"><!--span class="glyphicon glyphicon-ok-sign"></span-->
+ 		 <input type="submit" class="btn btn-success btn-lg" name="submit1" id="submit1" style="width: 100%;" value="Submit"><!--span class="glyphicon glyphicon-ok-sign"></span-->
  
  		</div>
  		
