@@ -27,6 +27,11 @@ if (isset($_POST['submit1'])){
 		}
 	    echo "FEEDBACK ACCEPTED";
 	}
+	else
+	{ ?>
+		<script type="text/javascript">window.alert("Fields marked with asterisk are required")</script>
+<?php 
+	}
 }
 echo "<br /><a href='feedback.php'>Course Dashboard</a>";
 //echo $field1;
