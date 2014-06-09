@@ -82,10 +82,11 @@
                      $rs1 = mysql_query($str)  or die(mysql_error());
                      $f=0;
                      while($rows = mysql_fetch_array($rs1)){
-                         $f=$f+1;
-                        if($rows['flag']==1 && $rows['course_id']==Course1)
+                         if($rows['flag']==1 && $rows['course_id']==Course1 && $f!=1){
+                            $f=1;
                             echo "feedback given";
-                        else{
+                        }
+                        elseif($rows['flag']==0 && $rows['course_id']==Course1 && $f!=1){
                             echo "feedback not given";
                             
                         }
@@ -94,7 +95,12 @@
                         echo "feedback not given";
                     ?>
                 </td>
- 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course1"><span class="glyphicon glyphicon-pencil"></span></p></td>
+ 				<td><p>
+                    <?php if($f==0){ ?>
+                    <input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course1">
+                    <?php }?>
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    </p></td>
  				
   				</tr>
   				
@@ -105,10 +111,11 @@
                      $rs1 = mysql_query($str)  or die(mysql_error());
                      $f=0;
                      while($rows = mysql_fetch_array($rs1)){
-                         $f=$f+1;
-                        if($rows['flag']==1 && $rows['course_id']==Course2)
+                         if($rows['flag']==1 && $rows['course_id']==Course2 && $f!=1){
+                            $f=1;
                             echo "feedback given";
-                        else{
+                        }
+                        elseif($rows['flag']==0 && $rows['course_id']==Course2 && $f!=1){
                             echo "feedback not given";
                             
                         }
@@ -116,7 +123,11 @@
                      if($f==0)
                         echo "feedback not given";
                     ?></td>
- 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course2"><span class="glyphicon glyphicon-pencil"></span></p></td>
+ 				<td><p>
+                    <?php if($f==0){ ?>
+                    <input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course2">
+                    <?php }?>
+                    <span class="glyphicon glyphicon-pencil"></span></p></td>
  				
   				</tr>
   
@@ -127,10 +138,11 @@
                      $rs1 = mysql_query($str)  or die(mysql_error());
                      $f=0;
                      while($rows = mysql_fetch_array($rs1)){
-                         $f=$f+1;
-                        if($rows['flag']==1 && $rows['course_id']==Course3)
+                         if($rows['flag']==1 && $rows['course_id']==Course3 && $f!=1){
+                            $f=1;
                             echo "feedback given";
-                        else{
+                        }
+                        elseif($rows['flag']==0 && $rows['course_id']==Course3 && $f!=1){
                             echo "feedback not given";
                             
                         }
@@ -138,7 +150,11 @@
                      if($f==0)
                         echo "feedback not given";
                     ?></td>
- 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course3"><span class="glyphicon glyphicon-pencil"></span></p></td>
+ 				<td><p>
+                    <?php if($f==0){ ?>
+                    <input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course3">
+                    <?php }?>
+                    <span class="glyphicon glyphicon-pencil"></span></p></td>
  				
   				</tr>
   				
@@ -149,10 +165,11 @@
                      $rs1 = mysql_query($str)  or die(mysql_error());
                      $f=0;
                      while($rows = mysql_fetch_array($rs1)){
-                         $f=$f+1;
-                        if($rows['flag']==1 && $rows['course_id']==Course4)
+                         if($rows['flag']==1 && $rows['course_id']==Course4 && $f!=1){
+                            $f=1;
                             echo "feedback given";
-                        else{
+                        }
+                        elseif($rows['flag']==0 && $rows['course_id']==Course4 && $f!=1){
                             echo "feedback not given";
                             
                         }
@@ -160,7 +177,11 @@
                      if($f==0)
                         echo "feedback not given";
                     ?></td>
- 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course4"><span class="glyphicon glyphicon-pencil"></span></p></td>
+ 				<td><p>
+                    <?php if($f==0){ ?>
+                    <input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course4">
+                    <?php } ?>
+                    <span class="glyphicon glyphicon-pencil"></span></p></td>
  				
   				</tr>
   				
@@ -171,10 +192,12 @@
                      $rs1 = mysql_query($str)  or die(mysql_error());
                      $f=0;
                      while($rows = mysql_fetch_array($rs1)){
-                         $f=$f+1;
-                        if($rows['flag']==1 && $rows['course_id']==Course5)
+                         
+                        if($rows['flag']==1 && $rows['course_id']==Course5 && $f!=1){
+                            $f=1;
                             echo "feedback given";
-                        else{
+                        }
+                        elseif($rows['flag']==0 && $rows['course_id']==Course5 && $f!=1){
                             echo "feedback not given";
                             
                         }
@@ -182,7 +205,11 @@
                      if($f==0)
                         echo "feedback not given";
                     ?></td>
- 				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course5"><span class="glyphicon glyphicon-pencil"></span></p></td>
+ 				<td><p>
+                    <?php if($f==0){ ?>
+                    <input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course5">
+                    <?php }?>
+                    <span class="glyphicon glyphicon-pencil"></span></p></td>
  				</tr>
          
   			</tbody>
