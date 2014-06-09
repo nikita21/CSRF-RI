@@ -76,35 +76,112 @@
     
 				<tr>
 				<td>Course1</td>
- 				<td></td>
+ 				<td>
+                    <?php 
+                     $str = "SELECT * FROM output WHERE student_id = {$_SESSION['userName']}";
+                     $rs1 = mysql_query($str)  or die(mysql_error());
+                     $f=0;
+                     while($rows = mysql_fetch_array($rs1)){
+                         $f=$f+1;
+                        if($rows['flag']==1 && $rows['course_id']==Course1)
+                            echo "feedback given";
+                        else{
+                            echo "feedback not given";
+                            
+                        }
+                     }
+                     if($f==0)
+                        echo "feedback not given";
+                    ?>
+                </td>
  				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course1"><span class="glyphicon glyphicon-pencil"></span></p></td>
  				
   				</tr>
   				
   				<tr>
   				<td>Course2</td>
- 				<td></td>
+ 				<td><?php 
+                     $str = "SELECT * FROM output WHERE student_id = {$_SESSION['userName']}";
+                     $rs1 = mysql_query($str)  or die(mysql_error());
+                     $f=0;
+                     while($rows = mysql_fetch_array($rs1)){
+                         $f=$f+1;
+                        if($rows['flag']==1 && $rows['course_id']==Course2)
+                            echo "feedback given";
+                        else{
+                            echo "feedback not given";
+                            
+                        }
+                     }
+                     if($f==0)
+                        echo "feedback not given";
+                    ?></td>
  				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course2"><span class="glyphicon glyphicon-pencil"></span></p></td>
  				
   				</tr>
   
   				<tr>
   				<td>Course3</td>
-  				<td>feedback not given</td>
+  				<td><?php 
+                     $str = "SELECT * FROM output WHERE student_id = {$_SESSION['userName']}";
+                     $rs1 = mysql_query($str)  or die(mysql_error());
+                     $f=0;
+                     while($rows = mysql_fetch_array($rs1)){
+                         $f=$f+1;
+                        if($rows['flag']==1 && $rows['course_id']==Course3)
+                            echo "feedback given";
+                        else{
+                            echo "feedback not given";
+                            
+                        }
+                     }
+                     if($f==0)
+                        echo "feedback not given";
+                    ?></td>
  				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course3"><span class="glyphicon glyphicon-pencil"></span></p></td>
  				
   				</tr>
   				
   				<tr>
   			    <td>Course4</td>
-  				<td>feedback given</td>
+  				<td><?php 
+                     $str = "SELECT * FROM output WHERE student_id = {$_SESSION['userName']}";
+                     $rs1 = mysql_query($str)  or die(mysql_error());
+                     $f=0;
+                     while($rows = mysql_fetch_array($rs1)){
+                         $f=$f+1;
+                        if($rows['flag']==1 && $rows['course_id']==Course4)
+                            echo "feedback given";
+                        else{
+                            echo "feedback not given";
+                            
+                        }
+                     }
+                     if($f==0)
+                        echo "feedback not given";
+                    ?></td>
  				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course4"><span class="glyphicon glyphicon-pencil"></span></p></td>
  				
   				</tr>
   				
   				<tr>
   				<td>Course5</td>
- 				<td></td>
+ 				<td><?php 
+                     $str = "SELECT * FROM output WHERE student_id = {$_SESSION['userName']}";
+                     $rs1 = mysql_query($str)  or die(mysql_error());
+                     $f=0;
+                     while($rows = mysql_fetch_array($rs1)){
+                         $f=$f+1;
+                        if($rows['flag']==1 && $rows['course_id']==Course5)
+                            echo "feedback given";
+                        else{
+                            echo "feedback not given";
+                            
+                        }
+                     }
+                     if($f==0)
+                        echo "feedback not given";
+                    ?></td>
  				<td><p><input type="submit" class="btn btn-success btn-xs" onClick="location.href='feedback_form.php'" name="Course" value="Course5"><span class="glyphicon glyphicon-pencil"></span></p></td>
  				</tr>
          
