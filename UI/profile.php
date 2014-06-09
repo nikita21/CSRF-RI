@@ -1,13 +1,15 @@
 <?php 
  include_once("signin.php"); 
  session_start(); 
- //$strSQL = "SELECT * FROM student_details WHERE student_id = $_SESSION['userName']";
- //$rs = mysql_query($strSQL);
- //while($row = mysql_fetch_array($rs))
- //{
+ $strSQL = "SELECT * FROM student_details WHERE student_id = {$_SESSION['userName']}";
+ $rs = mysql_query($strSQL)  or die(mysql_error());
+ while($row = mysql_fetch_array($rs))
+ {
+     $name=$row['name'];
+     $email=$row['email_id'];
    // echo $row['name'];
     //echo $row['email_id'];
- //}
+ }
 ?>
 <html>
  <head>
@@ -38,7 +40,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"></a>
+          <a class="navbar-brand" href="dashboard.php">Dashboard</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -71,9 +73,9 @@
         </div>
         
         <div class="span8 col-xs-5">
-            <h3>Name :    <!--?php echo $fullname; ?--></h3>
+            <h3>Name :    <?php echo "$name"; ?></h3>
             <h6>Student_ID : <?php echo $_SESSION['userName']; ?></h6>
-            <h6>Email: <!--?php echo $mail; ?--></h6>
+            <h6>Email: <?php echo "$email"; ?></h6>
         </div>
     </div>
     </div>
