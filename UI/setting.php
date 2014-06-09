@@ -4,9 +4,9 @@
     if(isset($_POST['submit']))
     {
         $mail = $_POST['mail']; 
-        $password = md5($_POST['password']);
-        $newpassword = md5($_POST['newpassword']);
-        $confirmnewpassword = md5($_POST['confirmnewpassword']);
+        $password = ($_POST['password']);
+        $newpassword = ($_POST['newpassword']);
+        $confirmnewpassword = ($_POST['confirmnewpassword']);
 
         $result = mysql_query("SELECT password FROM student_details WHERE student_id='$mail'");
 
@@ -16,8 +16,10 @@
             }
             else
             if($password != mysql_result($result, 0))
-            {
-                echo "Entered an incorrect password";
+            { ?>
+                <script type="text/javascript">window.alert("Entered an incorrect password")</script>
+            <?php
+                //echo "Entered an incorrect password";
             }
 
             if($newpassword == $confirmnewpassword)
@@ -27,11 +29,14 @@
 
             if($sql)
             {
-                echo "Congratulations, password successfully changed!";
+                header("Location: https://localhost/UI/dashboard.php");
+                //echo "Congratulations, password successfully changed!";
             }
             else
-            {
-                echo "New password and confirm password must be the same!";
+            { ?>
+                <script type="text/javascript">window.alert("New password and confirm password must be the same!")</script>
+                <?php
+                //echo "New password and confirm password must be the same!";
             }
     
     

@@ -26,15 +26,18 @@ if (isset($_POST['submit1'])){
 		{
 		  die('Error: ' . mysql_error());
 		}
+		header("Location: https://localhost/UI/feedback.php");
 		?>
 		<script type="text/javascript">window.alert("FEEDBACK ACCEPTED")</script>
 		<?php
-	    echo "FEEDBACK ACCEPTED";
+		
+	    //echo "FEEDBACK ACCEPTED";
 	}
 	else
 	{ ?>
 		<script type="text/javascript">window.alert("Fields marked with asterisk are required")</script>
 <?php 
+      //header("Location: https://localhost/UI/feedback.php");
 	}
 }
 echo "<br /><a href='feedback.php'>Course Dashboard</a>";

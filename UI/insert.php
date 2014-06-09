@@ -19,8 +19,9 @@ if (!mysql_query($query,$conn))
 {
   die('Error: ' . mysql_error());
 }
-echo "1 record added";
-echo $field1;
+header("Location: https://localhost/UI/dashboard.php");
+//echo "1 record added";
+//echo $field1;
 //mysql_query($query);
 mysql_close();
 ?>

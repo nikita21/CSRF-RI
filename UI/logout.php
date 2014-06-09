@@ -7,9 +7,10 @@
 	session_destroy(); #destroys the session
  
 	if(!$_SESSION['userName']){
-   		echo "Successfully logged out!<br />";
    		
-		echo "<br /><a href='login.html'>Login</a>";
+   		header("Location: https://localhost/UI/login.html");
+   		echo "Successfully logged out!<br />";
+		//echo "<br /><a href='login.html'>Login</a>";
 	}
 	else
    		 echo "Error Occured!!<br />";

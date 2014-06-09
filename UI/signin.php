@@ -24,8 +24,9 @@
         echo "Successful Login!";
         $_SESSION['userName'] = $uname;
 	#open("homepage.html");
-        echo "<br />Welcome ".$_SESSION['userName']."!";
-	echo "<br /><a href='dashboard.php'>Go to Dashboard</a>";
+        //echo "<br />Welcome ".$_SESSION['userName']."!";
+	//echo "<br /><a href='dashboard.php'>Go to Dashboard</a>";
+  header("Location: https://localhost/UI/dashboard.php");
         #echo "<br /><a href='signupform.php'>SignUp</a>";
         #echo "<br /><a href='signinform.php'>SignIn</a>";
         #echo "<br /><a href='logout.php'>LogOut</a>";
