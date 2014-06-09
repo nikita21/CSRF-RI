@@ -78,7 +78,7 @@
 				<td>Course1</td>
  				<td>
                     <?php 
-                     $str = "SELECT * FROM output WHERE student_id = {$_SESSION['userName']}";
+                     $str = "SELECT * FROM output WHERE student_id = md5({$_SESSION['userName']})";
                      $rs1 = mysql_query($str)  or die(mysql_error());
                      $f=0;
                      while($rows = mysql_fetch_array($rs1)){
@@ -107,7 +107,7 @@
   				<tr>
   				<td>Course2</td>
  				<td><?php 
-                     $str = "SELECT * FROM output WHERE student_id = {$_SESSION['userName']}";
+                     $str = "SELECT * FROM output WHERE student_id = md5({$_SESSION['userName']})";
                      $rs1 = mysql_query($str)  or die(mysql_error());
                      $f=0;
                      while($rows = mysql_fetch_array($rs1)){
@@ -134,7 +134,7 @@
   				<tr>
   				<td>Course3</td>
   				<td><?php 
-                     $str = "SELECT * FROM output WHERE student_id = {$_SESSION['userName']}";
+                     $str = "SELECT * FROM output WHERE student_id = md5({$_SESSION['userName']})";
                      $rs1 = mysql_query($str)  or die(mysql_error());
                      $f=0;
                      while($rows = mysql_fetch_array($rs1)){
@@ -161,7 +161,7 @@
   				<tr>
   			    <td>Course4</td>
   				<td><?php 
-                     $str = "SELECT * FROM output WHERE student_id = {$_SESSION['userName']}";
+                     $str = "SELECT * FROM output WHERE student_id = md5({$_SESSION['userName']})";
                      $rs1 = mysql_query($str)  or die(mysql_error());
                      $f=0;
                      while($rows = mysql_fetch_array($rs1)){
@@ -188,7 +188,7 @@
   				<tr>
   				<td>Course5</td>
  				<td><?php 
-                     $str = "SELECT * FROM output WHERE student_id = {$_SESSION['userName']}";
+                     $str = "SELECT * FROM output WHERE student_id = md5({$_SESSION['userName']})";
                      $rs1 = mysql_query($str)  or die(mysql_error());
                      $f=0;
                      while($rows = mysql_fetch_array($rs1)){

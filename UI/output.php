@@ -14,7 +14,7 @@ $field4=$_POST['q3'];
 $field5=$_POST['q4'];
 $field6=$_POST['q5'];
 $field7=$_POST['submit1'];
-$field8=$_POST['username'];
+$field8=md5($_POST['username']);
 
 //@mysql_select_db($database) or die( "Unable to select database");
 if (isset($_POST['submit1'])){
