@@ -14,12 +14,13 @@ $field4=$_POST['q3'];
 $field5=$_POST['q4'];
 $field6=$_POST['q5'];
 $field7=$_POST['submit1'];
+$field8=$_POST['username'];
 
 //@mysql_select_db($database) or die( "Unable to select database");
 if (isset($_POST['submit1'])){
 	if(isset($_POST['q1']) && isset($_POST['q2']) && isset($_POST['q3']) && isset($_POST['q4']) && isset($_POST['q5'])){
 		$field7 = 1;
-	    $query = "INSERT INTO output VALUES('$field1','$field2','$field3','$field4','$field5','$field6','$field7')";
+	    $query = "INSERT INTO output VALUES('$field8','$field1','$field2','$field3','$field4','$field5','$field6','$field7')";
 
 		if (!mysql_query($query,$conn))
 		{
