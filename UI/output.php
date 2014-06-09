@@ -26,6 +26,9 @@ if (isset($_POST['submit1'])){
 		{
 		  die('Error: ' . mysql_error());
 		}
+		?>
+		<script type="text/javascript">window.alert("FEEDBACK ACCEPTED")</script>
+		<?php
 	    echo "FEEDBACK ACCEPTED";
 	}
 	else
