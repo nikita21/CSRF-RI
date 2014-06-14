@@ -1,2 +1,3 @@
-flag part left..
-hash fn left for anonymous feedback..
+ui for admin..
+apply features of finding avg rating question wise, overall....
+sqli..
