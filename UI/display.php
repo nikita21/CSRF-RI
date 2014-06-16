@@ -16,6 +16,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/display.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
@@ -52,26 +53,55 @@
       </div>
     </div>
       <br>&nbsp;<br></br></br>
+      
+      
       <div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="feedback_result.php">See Performance</a></li>
-                <li><a href="profile.php">Profile</a></li>
-                <li><a href="setting.php">Settings</a></li>
-            </ul>
-        </div>
-        <div class="col-md-9 well">
-            This feedback website is simply gathering insights from students to improve the Quality of knowledge. This ability to capture real-time feedback about education provided at key interaction points provides organization critical insights that highlight key opportunities for improvement.
+        <div class="row">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+                <h3 class="panel-title">Courses feedback</h3>
+                <div class="pull-right">
+                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr class="filters">
+                        <th><input type="text" class="form-control" placeholder="#" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Course Name" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="No. of feedback" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Avg feedback" disabled></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Course1</td>
+                        <td>240</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Course2</td>
+                        <td>220</td>
+                        <td>3.5</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Course3</td>
+                        <td>235</td>
+                        <td>4.5</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
-
 
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/bootbox.js"></script>
+    <script src="bootstrap/js/display.js"></script>
   </body>
   </html>

@@ -52,22 +52,41 @@
       </div>
     </div>
       <br>&nbsp;<br></br></br>
+      
+      
       <div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="feedback_result.php">See Performance</a></li>
-                <li><a href="profile.php">Profile</a></li>
-                <li><a href="setting.php">Settings</a></li>
-            </ul>
-        </div>
-        <div class="col-md-9 well">
-            This feedback website is simply gathering insights from students to improve the Quality of knowledge. This ability to capture real-time feedback about education provided at key interaction points provides organization critical insights that highlight key opportunities for improvement.
-        </div>
-    </div>
-</div>
+          <form class="form-horizontal" action="output.php" method="post">
+              <div class="row center well">
+                  <h3><center>See performance</center></h3>
+                    <div class="modal-body">
+                        <div class="form-group">
+                        <div  class="col-xs-6"><p>Course name :</p></div>
+                        <div class="col-xs-6"> <select>
+                          <option value="volvo">Course1</option>
+                          <option value="saab">Course2</option>
+                          <option value="mercedes">Course3</option>
+                          <option value="audi">Course4</option>
+                        </select></div>
+                        </div>
 
+                        <div class="form-group">
+                        <div  class="col-xs-6"><p>Choose type: *</p></div>
+                        <div class="col-xs-6">
+                             <select>
+                                  <option value="1">Average feedback per question of the chosen course</option>
+                                  <option value="2">Overall feedback</option>
+                                </select>
+                    </div>
+                     </div>
+
+                     <input type="submit" class="btn btn-success btn-lg" name="submit1" id="submit1" style="width: 100%;" value="Submit">
+
+                    </div>
+ 		
+         </div>
+        </form>
+     	
+   </div>
 
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
