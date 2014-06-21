@@ -2,6 +2,22 @@
  include_once("signin.php"); 
  session_start(); 
 ?>
+<?php
+$sql = 'SELECT course_id, emp_name, emp_salary FROM output';
+
+$retval = mysql_query( $sql, $conn );
+if(! $retval )
+{
+  die('Could not get data: ' . mysql_error());
+}
+while($row = mysql_fetch_assoc($retval))
+{
+    echo "EMP ID :{$row['emp_id']}  <br> ".
+         "EMP NAME : {$row['emp_name']} <br> ".
+         "EMP SALARY : {$row['emp_salary']} <br> ".
+         "--------------------------------<br>";
+} 
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
