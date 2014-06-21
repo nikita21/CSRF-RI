@@ -26,7 +26,14 @@
 	#open("homepage.html");
         //echo "<br />Welcome ".$_SESSION['userName']."!";
 	//echo "<br /><a href='dashboard.php'>Go to Dashboard</a>";
-  header("Location: https://localhost/UI/dashboard.php");
+        if($_SESSION['isAdmin'] == 1)
+        {
+          header("Location: https://localhost/UI/dashboard.php");
+        }
+        else if($_SESSION['isAdmin'] == 2)
+        {
+          header("Location: https://localhost/UI/admin_dashboard.php");
+        }
         #echo "<br /><a href='signupform.php'>SignUp</a>";
         #echo "<br /><a href='signinform.php'>SignIn</a>";
         #echo "<br /><a href='logout.php'>LogOut</a>";
