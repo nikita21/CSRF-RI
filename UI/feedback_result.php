@@ -55,7 +55,7 @@
       
       
       <div class="container">
-          <!--form class="form-horizontal" action=""-->
+          <form class="form-horizontal" action="file_generate.php" method="GET">
               <div class="row well">
                   <h3><center>See performance</center></h3>
                     <div class="modal-body">
@@ -63,10 +63,10 @@
                         <div  class="col-xs-6"><p>Course name :</p></div>
                         <div class="col-xs-6"> 
                           <select>
-                          <option value="volvo">Course1</option>
-                          <option value="saab">Course2</option>
-                          <option value="mercedes">Course3</option>
-                          <option value="audi">Course4</option>
+                          <option name="course" value="course1">Course1</option>
+                          <option name="course" value="course2">Course2</option>
+                          <option name="course" value="course3">Course3</option>
+                          <option name="course" value="course4">Course4</option>
                         </select></div>
                         </div>
                         <br/>
@@ -74,18 +74,18 @@
                         <div  class="col-xs-6"><p>Choose type :*</p></div>
                           <div class="col-xs-6">
                                <select>
-                                    <option value="1">Average feedback per question of the chosen course</option>
-                                    <option value="2">Overall feedback</option>
+                                    <option name="option" value="1">Average feedback per question of the chosen course</option>
+                                    <option name="option" value="2">Overall feedback</option>
                                </select>
                           </div>
                         </div>
                         <br/><br/>
-                    <input type="submit" class="btn btn-success btn-lg" onClick="location.href='display.php'" name="submit" id="submit" style="width: 100%;" value="Submit">
+                    <input type="submit" class="btn btn-success btn-lg" name="submit" id="submit" style="width: 100%;" value="Submit">
 
                   </div>
  		
               </div>
-          <!--/form-->
+          </form>
      	
      </div>
 
