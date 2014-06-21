@@ -40,11 +40,41 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="dashboard.php">Dashboard</a>
+          <?php 
+                     $str = "SELECT * FROM student_details WHERE student_id = {$_SESSION['userName']}";
+                     $rs1 = mysql_query($str)  or die(mysql_error());
+                     while($rows = mysql_fetch_array($rs1))
+                     {
+                         if($rows['isAdmin']==1){
+          ?>
+            <a class="navbar-brand" href="dashboard.php">Dashboard</a>
+          <?php
+                        }
+                        elseif($rows['isAdmin']==2){
+          ?>
+            <a class="navbar-brand" href="admin_dashboard.php">Dashboard</a>
+          <?php                 
+                        }
+                     }
+          ?>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+            <?php 
+                     $str = "SELECT * FROM student_details WHERE student_id = {$_SESSION['userName']}";
+                     $rs1 = mysql_query($str)  or die(mysql_error());
+                     while($rows = mysql_fetch_array($rs1))
+                     {
+                         if($rows['isAdmin']==1){
+          ?>
             <li><a href="feedback.php">Feedback</a></li>
+          <?php
+                        }
+                        elseif($rows['isAdmin']==2){                 
+                        }
+                     }
+          ?>
+            
             <li><a href="profile.php">Profile</a></li>
             <li><a href="setting.php">Help</a></li>
             <li><div class="btn-group pull-right">
