@@ -16,6 +16,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/display.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
@@ -55,7 +56,7 @@
       
       
       <div class="container">
-          <form class="form-horizontal" action="file_generate.php" method="GET">
+          <form class="form-horizontal" action="" method="post">
               <div class="row well">
                   <h3><center>See performance</center></h3>
                     <div class="modal-body">
@@ -63,10 +64,16 @@
                         <div  class="col-xs-6"><p>Course name :</p></div>
                         <div class="col-xs-6"> 
                           <select>
-                          <option name="course" value="course1">Course1</option>
-                          <option name="course" value="course2">Course2</option>
-                          <option name="course" value="course3">Course3</option>
-                          <option name="course" value="course4">Course4</option>
+                              <?php
+                                $str = "SELECT DISTINCT course_id FROM output";
+                     $rs1 = mysql_query($str)  or die(mysql_error());
+                     $f=0;
+                     while($rows = mysql_fetch_array($rs1)){
+                         
+                              ?>
+                          <option name="course" value="<?php echo $rows['course_id']?>"><?php echo $rows['course_id']?></option>
+                              <?php
+                     }  ?>
                         </select></div>
                         </div>
                         <br/>
@@ -80,18 +87,69 @@
                           </div>
                         </div>
                         <br/><br/>
-                    <input type="submit" class="btn btn-success btn-lg" name="submit" id="submit" style="width: 100%;" value="Submit">
-
+                    <!--input type="submit" class="btn btn-success btn-lg" name="submit" id="submit" style="width: 100%;" value="Submit" onclick="showDiv()" -->
+<input type="button" class="btn btn-primary btn-lg" name="submit" style="width: 100%;" value="Submit" onclick="showDiv()" />
                   </div>
  		
               </div>
           </form>
-     	
+     	<div id="welcomeDiv"  style="display:none;" class="well row" ><center>Feedback</center>
+          
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+                <h3 class="panel-title">Courses feedback</h3>
+                <div class="pull-right">
+                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr class="filters">
+                        <th><input type="text" class="form-control" placeholder="#" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Course Name" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="No. of feedback" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Avg feedback" disabled></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <?php
+                            $course = $_POST['course'];
+                            $option = $_POST['option'];
+                            if($option==1){
+                                $sql = mysql_query(" SELECT AVG(q1),AVG(q2) FROM table_name WHERE student_id = '$course'");
+                            }
+                        ?>
+                        <td>1</td>
+                        <td>Course1</td>
+                        <td>240</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Course2</td>
+                        <td>220</td>
+                        <td>3.5</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Course3</td>
+                        <td>235</td>
+                        <td>4.5</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+</div></div>
+          
      </div>
 
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="bootstrap/js/bootbox.js"></script>
+    <script src="bootstrap/js/fr.js"></script>
+    <script src="bootstrap/js/display.js"></script>
+
   </body>
   </html>
