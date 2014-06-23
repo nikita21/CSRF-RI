@@ -10,6 +10,7 @@
 #$student_id=$_POST['Username'];
 #$field2=$_POST['Name'];
 #$field3=$_POST['Email'];
+require("class.phpmailer.php");
 $field4=$_POST['Password'];
 #$field5=$_POST['choose'];
 $field6=md5(uniqid(rand())); 
@@ -61,6 +62,7 @@ function test_input($data) {
    $data = htmlspecialchars($data);
    return $data;
 }
+if(isset($_POST['submit1'])){
 if(isset($_POST['Username']) && $name != "" && $email != "" && isset($_POST['choose']) && isset($_POST['Password'])){
 	$query = "INSERT INTO temp_users VALUES('$field6','$student_id','$name','$email','$field4','$admin')";
 	$result=mysql_query($query,$conn);
@@ -68,22 +70,53 @@ if(isset($_POST['Username']) && $name != "" && $email != "" && isset($_POST['cho
 	if($result){
 	// ---------------- SEND MAIL FORM ----------------
 
+	    require("class.phpmailer.php");
+
+		$mail = new PHPMailer();
+
+		$mail->IsSMTP();  // telling the class to use SMTP
+
+		$mail->Host     = "localhost"; // SMTP server
+
+		$mail->From     = "nnikita2104@gmail.com";
+
+		$mail->Username = "nnikita2104@gmail.com";  // SMTP username
+        $mail->Password = "9672322@787#"
+
+		$mail->AddAddress("$field3");
+
+		$mail->Subject  = "First PHPMailer Message";
+
+		$mail->Body     = "Hi! \n\n This is my first e-mail sent through PHPMailer.";
+
+		$mail->WordWrap = 50;
+
+		if(!$mail->Send()) {
+
+		echo 'Message was not sent.';
+
+		echo 'Mailer error: ' . $mail->ErrorInfo;
+
+		} else {
+
+		echo 'Message has been sent.';
+		}
 	// send e-mail to ...
-	$to=$field3;
+	//$to=$field3;
 
 	// Your subject
-	$subject="Your confirmation link here";
+	//$subject="Your confirmation link here";
 
 	// From
-	$header="from: your name <your email>";
+	//$header="from: your name <your email>";
 
 	// Your message
-	$message="Your Comfirmation link \r\n";
-	$message.="Click on this link to activate your account \r\n";
-	$message.="http://www.yourweb.com/confirmation.php?passkey=$field6";
+	//$message="Your Comfirmation link \r\n";
+	//$message.="Click on this link to activate your account \r\n";
+	//$message.="https://localhost/UI/insert.php?passkey=$field6";
 
 	// send email
-	$sentmail = mail($to,$subject,$message,$header);
+	//$sentmail = mail($to,$subject,$message,$header);
 	}
 
 	// if not found 
@@ -92,18 +125,19 @@ if(isset($_POST['Username']) && $name != "" && $email != "" && isset($_POST['cho
 	}
 
 	// if your email succesfully sent
-	if($sentmail = mail($to,$subject,$message,$header)){
-	echo "Your Confirmation link Has Been Sent To Your Email Address.";
-	}
-	else {
-	echo "Cannot send Confirmation link to your e-mail address";
-	}
+	//if($sentmail = mail($to,$subject,$message,$header)){
+	//echo "Your Confirmation link Has Been Sent To Your Email Address.";
+	//}
+	//else {
+	//echo "Cannot send Confirmation link to your e-mail address";
+	//}
 
 }
 else
 {
 	echo "Registration Failed!";
 	//header("Location: https://localhost/UI/login.php");
+}
 }
 //if($field5 == 1)
 //{
@@ -115,7 +149,7 @@ else
 	//$_SESSION['userName'] = $field1;
 //	header("Location: https://localhost/UI/admin_dashboard.php");
 //}
-mysql_close();
+//mysql_close();
 ?>
 
 
@@ -251,7 +285,7 @@ mysql_close();
 							  <div class="control-group">
 								<!-- Button -->
 								<div class="controls">
-								  <button class="btn btn-success">Create account</button>
+								  <input type="submit" class="btn btn-success btn-large" name="submit1" id="submit1" value="Sign Up now!">
 								</div>
 							  </div>
 							</fieldset>
