@@ -11,40 +11,58 @@
     $conn = mysql_connect($dbhost, $dbuser, $dbpass);
      $uname = $_POST['Username'];
      $pass = $_POST['Password'];
- 
-     $sql = "SELECT count(*) FROM student_details WHERE(
+     $field6=md5(uniqid(rand())); 
+
+     $sql = "SELECT email_id, isAdmin, student_id FROM student_details WHERE(
      student_id='".$uname."' and  password='".$pass."' and isAdmin=1)";
  
       $qury = mysql_query($sql);
  
       $result = mysql_fetch_array($qury);
- 
-      if($result[0]>0)
+      
+
+      if($result[0])
       {
         echo "Successful Login!";
         $_SESSION['userName'] = $uname;
-	#open("homepage.html");
-        //echo "<br />Welcome ".$_SESSION['userName']."!";
-	//echo "<br /><a href='dashboard.php'>Go to Dashboard</a>";
-        
-        header("Location: https://localhost/UI/dashboard.php");
-         
-        #echo "<br /><a href='signupform.php'>SignUp</a>";
-        #echo "<br /><a href='signinform.php'>SignIn</a>";
-        #echo "<br /><a href='logout.php'>LogOut</a>";
+        $email = $result[0];
+        $isAdmin = $result[1];
+        $student_id = $result[2];
+        $confirm="INSERT INTO login_confirmation(confirm_code)VALUES('$field6')";
+        $res=mysql_query($confirm,$conn);
+        require 'Send_Mail.php';
+        $to = $email;
+        $subject = "Test Mail Subject";
+        $body="Your Comfirmation link \r\n";
+        $body.="Click on this link to activate your account \r\n";
+        $body.="https://localhost/UI/confirmation.php?passkey=$field6&admin=$isAdmin&id=$student_id";
+        Send_Mail($to,$subject,$body);
+        //header("Location: https://localhost/UI/dashboard.php");
       }
       else
       {
-         $sql1 = "SELECT count(*) FROM student_details WHERE(student_id='".$uname."' and  password='".$pass."' and isAdmin=2)";
+         $sql1 = "SELECT email_id, isAdmin, student_id FROM student_details WHERE(student_id='".$uname."' and  password='".$pass."' and isAdmin=2)";
  
          $qury1 = mysql_query($sql1);
  
          $result1 = mysql_fetch_array($qury1);
-         if($result1[0]>0)
+         if($result1[0])
          {
             echo "Successful Login!";
             $_SESSION['userName'] = $uname;
-            header("Location: https://localhost/UI/admin_dashboard.php");
+            $email = $result1[0];
+            $isAdmin = $result1[1];
+            $student_id = $result[2];
+            $confirm="INSERT INTO login_confirmation(confirm_code)VALUES('$field6')";
+            $res=mysql_query($confirm,$conn);
+            require 'Send_Mail.php';
+            $to = $email;
+            $subject = "Test Mail Subject";
+            $body="Your Comfirmation link \r\n";
+            $body.="Click on this link to activate your account \r\n";
+            $body.="https://localhost/UI/confirmation.php?passkey=$field6&admin=$isAdmin&id=$student_id";
+            Send_Mail($to,$subject,$body);
+           // header("Location: https://localhost/UI/admin_dashboard.php");
          }
          else if(!empty($uname)){
           echo "Login Failed";
