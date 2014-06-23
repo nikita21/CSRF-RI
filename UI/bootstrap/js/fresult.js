@@ -1,6 +1,6 @@
 
 $(function () {
-    $('#course_sel').on('change');
-    $('#option_sel').on('change');
+    $('#course_sel').change();
+    $('#option_sel').change();
    
 });

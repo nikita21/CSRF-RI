@@ -56,7 +56,7 @@
       
       
       <div class="container">
-          <form class="form-horizontal" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+          <form class="form-horizontal" action="" method="post">
               <div class="row well">
                   <h3><center>See performance</center></h3>
                     <div class="modal-body">
@@ -81,7 +81,7 @@
                         <div class="form-group">
                         <div  class="col-xs-6"><p>Choose type :</p></div>
                           <div class="col-xs-6">
-                               <select name="option_sel">
+                               <select name="option_sel" id="option_sel">
                                     <option value="1">Average feedback per question of the chosen course</option>
                                     <option value="2">Overall feedback</option>
                                </select>
@@ -98,9 +98,7 @@
         <div class="panel panel-primary filterable">
             <div class="panel-heading">
                 <h3 class="panel-title">Courses feedback</h3>
-<?php echo $_POST["course_sel"];
-                echo $_POST["option_sel"]; ?>
-                <?php if($_POST["option_sel"]==1){ ?>
+<?php if($_POST["option_sel"]==1){ ?>
                 <p>q1-Course content met your needs. q2-Instructor has the knowledge of the subject matter. q3-Instructor responded well to student questions. q4-Instructor communicated material effectively. q5-Course offering matched description in course guide.</p><?php } ?>
                 <div class="pull-right">
                     <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
@@ -130,14 +128,10 @@
                 <tbody>
                     <tr>
 <?php 
-echo $_POST["course_sel"];
 if($_POST["option_sel"]==1){
 $query="SELECT course_id,COUNT(course_id),AVG(q1),AVG(q2),AVG(q3),AVG(q4),AVG(q5) FROM output GROUP BY course_id";
 $result = mysql_query($query)or die(mysql_error());
 $count=1;
-echo $_POST["course_sel"];
-echo $_POST["option_sel"];
-echo ":P";
 while($row=mysql_fetch_array($result)){
 ?>
                         <td><?php echo $count; ?></td>
@@ -157,8 +151,6 @@ if($_POST["option_sel"]==2){
 $query="SELECT course_id,COUNT(course_id),(AVG(q1)+AVG(q2)+AVG(q3)+AVG(q4)+AVG(q5))/5 FROM output GROUP BY course_id";
 $result = mysql_query($query)or die(mysql_error());
 $count=1;
-echo $_POST["course_sel"];
-echo ":P";
 while($row=mysql_fetch_array($result)){
 ?>
                         <td><?php echo $count; ?></td>
@@ -183,6 +175,7 @@ while($row=mysql_fetch_array($result)){
     <script src="bootstrap/js/bootbox.js"></script>
     <script src="bootstrap/js/fr.js"></script>
     <script src="bootstrap/js/display.js"></script>
+    <script src="bootstrap/js/fresult.js"></script>
 
   </body>
   </html>
