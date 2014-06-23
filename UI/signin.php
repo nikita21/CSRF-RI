@@ -52,7 +52,7 @@
             $_SESSION['userName'] = $uname;
             $email = $result1[0];
             $isAdmin = $result1[1];
-            $student_id = $result[2];
+            $student_id = $result1[2];
             $confirm="INSERT INTO login_confirmation(confirm_code)VALUES('$field6')";
             $res=mysql_query($confirm,$conn);
             require 'Send_Mail.php';
