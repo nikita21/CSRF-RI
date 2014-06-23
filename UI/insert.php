@@ -14,7 +14,7 @@ $tbl_name1="temp_users";
 
 // Retrieve data from table where row that match this passkey 
 $sql1="SELECT * FROM $tbl_name1 WHERE confirm_code ='$passkey'";
-$result1=mysql_query($sql1);
+$result1=mysql_query($sql1,$conn);
 
 // If successfully queried 
 if($result1){
@@ -35,7 +35,7 @@ $tbl_name2="student_details";
 
 // Insert data that retrieves from "temp_members_db" into table "registered_members" 
 $sql2="INSERT INTO $tbl_name2(student_id,name, email_id, password, isAdmin)VALUES('$student_id','$name', '$email', '$password', '$admin')";
-$result2=mysql_query($sql2);
+$result2=mysql_query($sql2,$conn);
 }
 
 // if not found passkey, display message "Wrong Confirmation code" 
@@ -48,25 +48,6 @@ if($result2){
 
 echo "Your account has been activated";
 
-// Delete information of this user from table "temp_members_db" that has this passkey 
-$sql3="DELETE FROM $tbl_name1 WHERE confirm_code = '$passkey'";
-$result3=mysql_query($sql3);
-
-}
-
-}
-$field1=$_POST['Username'];
-$field2=$_POST['Name'];
-$field3=$_POST['Email'];
-$field4=$_POST['Password'];
-$field5=$_POST['choose'];
-//@mysql_select_db($database) or die( "Unable to select database");
-$query = "INSERT INTO student_details VALUES('$field1','$field2','$field3','$field4','$field5')";
-
-if (!mysql_query($query,$conn))
-{
-  die('Error: ' . mysql_error());
-}
 if($field5 == 1)
 {
 	//$_SESSION['isAdmin'] = $field5;
@@ -79,6 +60,15 @@ else if($field5 == 2)
 	$_SESSION['userName'] = $field1;
 	header("Location: https://localhost/UI/admin_dashboard.php");
 }
+
+// Delete information of this user from table "temp_members_db" that has this passkey 
+$sql3="DELETE FROM $tbl_name1 WHERE confirm_code = '$passkey'";
+$result3=mysql_query($sql3,$conn);
+
+}
+
+}
+
 //echo "1 record added";
 //echo $field1;
 //mysql_query($query);
