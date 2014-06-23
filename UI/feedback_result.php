@@ -56,7 +56,7 @@
       
       
       <div class="container">
-          <form class="form-horizontal" action="" method="post">
+          <form class="form-horizontal" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
               <div class="row well">
                   <h3><center>See performance</center></h3>
                     <div class="modal-body">
@@ -98,6 +98,8 @@
         <div class="panel panel-primary filterable">
             <div class="panel-heading">
                 <h3 class="panel-title">Courses feedback</h3>
+<?php echo $_POST["course_sel"];
+                echo $_POST["option_sel"]; ?>
                 <?php if($_POST["option_sel"]==1){ ?>
                 <p>q1-Course content met your needs. q2-Instructor has the knowledge of the subject matter. q3-Instructor responded well to student questions. q4-Instructor communicated material effectively. q5-Course offering matched description in course guide.</p><?php } ?>
                 <div class="pull-right">
@@ -127,7 +129,8 @@
                 </thead>
                 <tbody>
                     <tr>
-<?php
+<?php 
+echo $_POST["course_sel"];
 if($_POST["option_sel"]==1){
 $query="SELECT course_id,COUNT(course_id),AVG(q1),AVG(q2),AVG(q3),AVG(q4),AVG(q5) FROM output GROUP BY course_id";
 $result = mysql_query($query)or die(mysql_error());
