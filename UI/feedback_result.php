@@ -63,31 +63,31 @@
                         <div class="form-group">
                         <div  class="col-xs-6"><p>Course name :</p></div>
                         <div class="col-xs-6"> 
-                          <select>
+                          <select name="course_sel" id="course_sel">
                               <?php
                                 $str = "SELECT DISTINCT course_id FROM output";
                      $rs1 = mysql_query($str)  or die(mysql_error());
-                     $f=0;
+                     $course;
                      while($rows = mysql_fetch_array($rs1)){
                          
                               ?>
-                          <option name="course" value="<?php echo $rows['course_id']?>"><?php echo $rows['course_id']?></option>
+                          <option value="<?php echo $rows['course_id']?>"><?php echo $rows['course_id']?></option>
                               <?php
                      }  ?>
+                              <option value="all">all</option>
                         </select></div>
                         </div>
                         <br/>
                         <div class="form-group">
-                        <div  class="col-xs-6"><p>Choose type :*</p></div>
+                        <div  class="col-xs-6"><p>Choose type :</p></div>
                           <div class="col-xs-6">
-                               <select>
-                                    <option name="option" value="1">Average feedback per question of the chosen course</option>
-                                    <option name="option" value="2">Overall feedback</option>
+                               <select name="option_sel">
+                                    <option value="1">Average feedback per question of the chosen course</option>
+                                    <option value="2">Overall feedback</option>
                                </select>
                           </div>
                         </div>
-                        <br/><br/>
-                    <!--input type="submit" class="btn btn-success btn-lg" name="submit" id="submit" style="width: 100%;" value="Submit" onclick="showDiv()" -->
+                        <br/>
 <input type="button" class="btn btn-primary btn-lg" name="submit" style="width: 100%;" value="Submit" onclick="showDiv()" />
                   </div>
  		
@@ -98,6 +98,8 @@
         <div class="panel panel-primary filterable">
             <div class="panel-heading">
                 <h3 class="panel-title">Courses feedback</h3>
+                <?php if($_POST["option_sel"]==1){ ?>
+                <p>q1-Course content met your needs. q2-Instructor has the knowledge of the subject matter. q3-Instructor responded well to student questions. q4-Instructor communicated material effectively. q5-Course offering matched description in course guide.</p><?php } ?>
                 <div class="pull-right">
                     <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
                 </div>
@@ -105,38 +107,66 @@
             <table class="table">
                 <thead>
                     <tr class="filters">
+                        <?php if($_POST["option_sel"]==1){ ?>
                         <th><input type="text" class="form-control" placeholder="#" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Course Name" disabled></th>
                         <th><input type="text" class="form-control" placeholder="No. of feedback" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Avg feedback" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="q1" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="q2" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="q3" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="q4" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="q5" disabled></th>
+                        <?php }?>
+                        <?php if($_POST["option_sel"]==2){ ?>
+                        <th><input type="text" class="form-control" placeholder="#" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Course Name" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="No. of feedback" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="overall" disabled></th>
+                        <?php }?>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <?php
-                            $course = $_POST['course'];
-                            $option = $_POST['option'];
-                            if($option==1){
-                                $sql = mysql_query(" SELECT AVG(q1),AVG(q2) FROM table_name WHERE student_id = '$course'");
-                            }
-                        ?>
-                        <td>1</td>
-                        <td>Course1</td>
-                        <td>240</td>
-                        <td>4</td>
+<?php
+if($_POST["option_sel"]==1){
+$query="SELECT course_id,COUNT(course_id),AVG(q1),AVG(q2),AVG(q3),AVG(q4),AVG(q5) FROM output GROUP BY course_id";
+$result = mysql_query($query)or die(mysql_error());
+$count=1;
+echo $_POST["course_sel"];
+echo $_POST["option_sel"];
+echo ":P";
+while($row=mysql_fetch_array($result)){
+?>
+                        <td><?php echo $count; ?></td>
+                        <td><?php echo $row[0]; ?></td>
+                        <td><?php echo $row[1]; ?></td>
+                        <td><?php echo $row[2]; ?></td>
+                        <td><?php echo $row[3]; ?></td>
+                        <td><?php echo $row[4]; ?></td>
+                        <td><?php echo $row[5]; ?></td>
+                        <td><?php echo $row[6]; ?></td>
+                        
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Course2</td>
-                        <td>220</td>
-                        <td>3.5</td>
+                    <?php $count++; } } ?>
+                    
+<?php
+if($_POST["option_sel"]==2){
+$query="SELECT course_id,COUNT(course_id),(AVG(q1)+AVG(q2)+AVG(q3)+AVG(q4)+AVG(q5))/5 FROM output GROUP BY course_id";
+$result = mysql_query($query)or die(mysql_error());
+$count=1;
+echo $_POST["course_sel"];
+echo ":P";
+while($row=mysql_fetch_array($result)){
+?>
+                        <td><?php echo $count; ?></td>
+                        <td><?php echo $row[0]; ?></td>
+                        <td><?php echo $row[1]; ?></td>
+                        <td><?php echo $row[2]; ?></td>
+                        <td><?php echo $row[3]; ?></td>
+                        
                     </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Course3</td>
-                        <td>235</td>
-                        <td>4.5</td>
-                    </tr>
+            <?php $count++; } } ?>
+                    
                 </tbody>
             </table>
         
