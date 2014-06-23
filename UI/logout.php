@@ -8,7 +8,7 @@
  
 	if(!$_SESSION['userName']){
    		
-   		header("Location: https://localhost/UI/login.html");
+   		header("Location: https://localhost/UI/login.php");
    		echo "Successfully logged out!<br />";
 		//echo "<br /><a href='login.html'>Login</a>";
 	}

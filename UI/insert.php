@@ -48,17 +48,18 @@ if($result2){
 
 echo "Your account has been activated";
 
-if($field5 == 1)
+if($admin == 1)
 {
-	//$_SESSION['isAdmin'] = $field5;
-	$_SESSION['userName'] = $field1;
-	header("Location: https://localhost/UI/dashboard.php");
+	$_SESSION['userName'] = $student_id;
+	echo "<br /><a href='dashboard.php'>Dashboard</a>";
+	//header("Location: https://localhost/UI/dashboard.php");
 }
-else if($field5 == 2)
+else if($admin == 2)
 {
 	//$_SESSION['isAdmin'] = $field5;
-	$_SESSION['userName'] = $field1;
-	header("Location: https://localhost/UI/admin_dashboard.php");
+	$_SESSION['userName'] = $student_id;
+	echo "<br /><a href='admin_dashboard.php'>Dashboard</a>";
+	//header("Location: https://localhost/UI/admin_dashboard.php");
 }
 
 // Delete information of this user from table "temp_members_db" that has this passkey 

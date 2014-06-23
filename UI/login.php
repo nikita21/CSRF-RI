@@ -10,7 +10,6 @@
 #$student_id=$_POST['Username'];
 #$field2=$_POST['Name'];
 #$field3=$_POST['Email'];
-require("class.phpmailer.php");
 $field4=$_POST['Password'];
 #$field5=$_POST['choose'];
 $field6=md5(uniqid(rand())); 
@@ -69,68 +68,21 @@ if(isset($_POST['Username']) && $name != "" && $email != "" && isset($_POST['cho
 	// if suceesfully inserted data into database, send confirmation link to email 
 	if($result){
 	// ---------------- SEND MAIL FORM ----------------
+		require 'Send_Mail.php';
+		$to = $email;
+		$subject = "Test Mail Subject";
+		$body="Your Comfirmation link \r\n";
+    	$body.="Click on this link to activate your account \r\n";
+    	$body.="https://localhost/UI/insert.php?passkey=$field6";
+		//$body = "Hi<br/>Test Mail<br/>Amazon SES"; // HTML  tags
+		Send_Mail($to,$subject,$body);
 
-	    require("class.phpmailer.php");
-
-		$mail = new PHPMailer();
-
-		$mail->IsSMTP();  // telling the class to use SMTP
-
-		$mail->Host     = "localhost"; // SMTP server
-
-		$mail->From     = "nnikita2104@gmail.com";
-
-		$mail->Username = "nnikita2104@gmail.com";  // SMTP username
-        $mail->Password = "9672322@787#"
-
-		$mail->AddAddress("$field3");
-
-		$mail->Subject  = "First PHPMailer Message";
-
-		$mail->Body     = "Hi! \n\n This is my first e-mail sent through PHPMailer.";
-
-		$mail->WordWrap = 50;
-
-		if(!$mail->Send()) {
-
-		echo 'Message was not sent.';
-
-		echo 'Mailer error: ' . $mail->ErrorInfo;
-
-		} else {
-
-		echo 'Message has been sent.';
-		}
-	// send e-mail to ...
-	//$to=$field3;
-
-	// Your subject
-	//$subject="Your confirmation link here";
-
-	// From
-	//$header="from: your name <your email>";
-
-	// Your message
-	//$message="Your Comfirmation link \r\n";
-	//$message.="Click on this link to activate your account \r\n";
-	//$message.="https://localhost/UI/insert.php?passkey=$field6";
-
-	// send email
-	//$sentmail = mail($to,$subject,$message,$header);
 	}
 
 	// if not found 
 	else {
 	echo "Not found your email in our database";
 	}
-
-	// if your email succesfully sent
-	//if($sentmail = mail($to,$subject,$message,$header)){
-	//echo "Your Confirmation link Has Been Sent To Your Email Address.";
-	//}
-	//else {
-	//echo "Cannot send Confirmation link to your e-mail address";
-	//}
 
 }
 else
