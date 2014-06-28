@@ -54,52 +54,20 @@
     </div>
       <br>&nbsp;<br></br></br>
       
-      
-      <div class="container">
-          <form class="form-horizontal" action="" method="post">
-              <div class="row well">
-                  <h3><center>See performance</center></h3>
-                    <div class="modal-body">
-                        <div class="form-group">
-                        <div  class="col-xs-6"><p>Course name :</p></div>
-                        <div class="col-xs-6"> 
-                          <select name="course_sel" id="course_sel">
-                              <?php
-                                $str = "SELECT DISTINCT course_id FROM output";
-                     $rs1 = mysql_query($str)  or die(mysql_error());
-                     $course;
-                     while($rows = mysql_fetch_array($rs1)){
-                         
-                              ?>
-                          <option value="<?php echo $rows['course_id']?>"><?php echo $rows['course_id']?></option>
-                              <?php
-                     }  ?>
-                              <option value="all">all</option>
-                        </select></div>
-                        </div>
-                        <br/>
-                        <div class="form-group">
-                        <div  class="col-xs-6"><p>Choose type :</p></div>
-                          <div class="col-xs-6">
-                               <select name="option_sel" id="option_sel">
-                                    <option value="1">Average feedback per question of the chosen course</option>
-                                    <option value="2">Overall feedback</option>
-                               </select>
-                          </div>
-                        </div>
-                        <br/>
-<input type="button" class="btn btn-primary btn-lg" name="submit" style="width: 100%;" value="Submit" onclick="showDiv()" />
-                  </div>
- 		
-              </div>
-          </form>
-     	<div id="welcomeDiv"  style="display:none;" class="well row" ><center>Feedback</center>
-          
+       <div class="container">                        
+                             
+      <div class="well row" ><h3><center>Feedback</center></h3>
+        <ul>
+          <li>q1-Course content met your needs.</li>
+          <li>q2-Instructor has the knowledge of the subject matter.</li>
+          <li>q3-Instructor responded well to student questions.</li>
+          <li>q4-Instructor communicated material effectively.</li>
+          <li>q5-Course offering matched description in course guide.</li>
+        </ul>  
         <div class="panel panel-primary filterable">
             <div class="panel-heading">
                 <h3 class="panel-title">Courses feedback</h3>
-<?php if($_POST["option_sel"]==1){ ?>
-                <p>q1-Course content met your needs. q2-Instructor has the knowledge of the subject matter. q3-Instructor responded well to student questions. q4-Instructor communicated material effectively. q5-Course offering matched description in course guide.</p><?php } ?>
+                
                 <div class="pull-right">
                     <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
                 </div>
@@ -107,7 +75,6 @@
             <table class="table">
                 <thead>
                     <tr class="filters">
-                        <?php if($_POST["option_sel"]==1){ ?>
                         <th><input type="text" class="form-control" placeholder="#" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Course Name" disabled></th>
                         <th><input type="text" class="form-control" placeholder="No. of feedback" disabled></th>
@@ -116,20 +83,13 @@
                         <th><input type="text" class="form-control" placeholder="q3" disabled></th>
                         <th><input type="text" class="form-control" placeholder="q4" disabled></th>
                         <th><input type="text" class="form-control" placeholder="q5" disabled></th>
-                        <?php }?>
-                        <?php if($_POST["option_sel"]==2){ ?>
-                        <th><input type="text" class="form-control" placeholder="#" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="Course Name" disabled></th>
-                        <th><input type="text" class="form-control" placeholder="No. of feedback" disabled></th>
                         <th><input type="text" class="form-control" placeholder="overall" disabled></th>
-                        <?php }?>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
 <?php 
-if($_POST["option_sel"]==1){
-$query="SELECT course_id,COUNT(course_id),AVG(q1),AVG(q2),AVG(q3),AVG(q4),AVG(q5) FROM output GROUP BY course_id";
+$query="SELECT course_id,COUNT(course_id),AVG(q1),AVG(q2),AVG(q3),AVG(q4),AVG(q5),(AVG(q1)+AVG(q2)+AVG(q3)+AVG(q4)+AVG(q5))/5 FROM output GROUP BY course_id";
 $result = mysql_query($query)or die(mysql_error());
 $count=1;
 while($row=mysql_fetch_array($result)){
@@ -142,25 +102,9 @@ while($row=mysql_fetch_array($result)){
                         <td><?php echo $row[4]; ?></td>
                         <td><?php echo $row[5]; ?></td>
                         <td><?php echo $row[6]; ?></td>
-                        
+                        <td><?php echo $row[7]; ?></td>
                     </tr>
-                    <?php $count++; } } ?>
-                    
-<?php
-if($_POST["option_sel"]==2){
-$query="SELECT course_id,COUNT(course_id),(AVG(q1)+AVG(q2)+AVG(q3)+AVG(q4)+AVG(q5))/5 FROM output GROUP BY course_id";
-$result = mysql_query($query)or die(mysql_error());
-$count=1;
-while($row=mysql_fetch_array($result)){
-?>
-                        <td><?php echo $count; ?></td>
-                        <td><?php echo $row[0]; ?></td>
-                        <td><?php echo $row[1]; ?></td>
-                        <td><?php echo $row[2]; ?></td>
-                        <td><?php echo $row[3]; ?></td>
-                        
-                    </tr>
-            <?php $count++; } } ?>
+                    <?php $count++; } ?>
                     
                 </tbody>
             </table>
@@ -168,6 +112,8 @@ while($row=mysql_fetch_array($result)){
 </div></div>
           
      </div>
+      
+     
 
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -175,7 +121,7 @@ while($row=mysql_fetch_array($result)){
     <script src="bootstrap/js/bootbox.js"></script>
     <script src="bootstrap/js/fr.js"></script>
     <script src="bootstrap/js/display.js"></script>
-    <script src="bootstrap/js/fresult.js"></script>
+    <!--cript src="bootstrap/js/fresult.js"></script-->
 
   </body>
   </html>
